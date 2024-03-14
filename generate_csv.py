@@ -23,19 +23,16 @@ def generate_realistic_name():
     return f"{prefix} {first_name} {last_name}"
 
 # Generate CSV file with random realistic-like data
-csv_file = "realistic_users.csv"
+csv_file = "random_users.csv"
 num_users = 10  # Change this to the desired number of users
 
 with open(csv_file, mode='w', newline='') as file:
     writer = csv.writer(file)
-    writer.writerow(['DisplayName', 'UserPrincipalName', 'GivenName', 'Surname', 'Password'])
+    writer.writerow(['DisplayName', 'UserPrincipalName', 'Password'])
     for _ in range(num_users):
         display_name = generate_realistic_name()
         user_principal_name = generate_random_email()
-        given_name = display_name.split()[1]  # Use the first name from the display name
-        surname = display_name.split()[-1]    # Use the last name from the display name
-        password = generate_random_string(8) + "123@"  # Adding some special characters to the password
-        writer.writerow([display_name, user_principal_name, given_name, surname, password])
+        password = generate_random_string(10) + "123@"  # Adding some special characters to the password
+        writer.writerow([display_name, user_principal_name, password])
 
 print(f"CSV file '{csv_file}' created successfully with {num_users} realistic-like users.")
-
