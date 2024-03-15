@@ -19,6 +19,7 @@
 1. Input selected users into the "UserCreateTemplate.csv" file
 2. Change the CSV file path to "UserCreateTemplate.csv"
 3. Input your desired Azure Entra Tenant ID
+4. Run the bash script
 
 ## Contributing
 
